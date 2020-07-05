@@ -22,8 +22,8 @@ function createTOC(){
     $(":header").each(function(i){
 	    if (this.id=='tocheading'){return;}
         
-	    var titleText = this.innerHTML;
-	    var openLevel = this.tagName[1];
+	    titleText = this.innerHTML;
+	    openLevel = this.tagName[1];
 
 	    if (levels[openLevel]){
 		levels[openLevel] += 1;
@@ -44,8 +44,7 @@ function createTOC(){
 	    if (this.id==''){this.id = this.innerHTML.replace(/ /g,"-")}
 	    var anchor = this.id;
         
-	    toc += '<li><a href="#' + encodeURIComponent(anchor) + '">'
-		+ titleText
+	    toc += '<li><a href="#' + anchor + '">' +  titleText
 		+ '</a></li>';
         
 	});
